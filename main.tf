@@ -1,3 +1,4 @@
+# This may be a golden image for company's use case.
 data "aws_ami" "ubuntu" {
   owners      = ["099720109477"] # Canonical
   most_recent = true
