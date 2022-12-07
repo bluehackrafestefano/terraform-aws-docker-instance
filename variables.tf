@@ -14,16 +14,16 @@ variable "num_of_instance" {
 
 variable "tag" {
   type    = string
-  default = "Docker-Instance"
+  default = "Ubuntu-Instance"
 }
 
 variable "server-name" {
   type    = string
-  default = "docker-instance"
+  default = "ubuntu"
 }
 
-variable "docker-instance-ports" {
+variable "instance-ports" {
   type        = list(number)
-  description = "docker-instance-sec-gr-inbound-rules"
+  description = "ubuntu-instance-sec-gr-inbound-rules"
   default     = [22, 80, 443]
 }

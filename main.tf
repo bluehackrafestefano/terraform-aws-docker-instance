@@ -50,7 +50,7 @@ resource "aws_security_group" "tf-sec-gr" {
   }
 
   dynamic "ingress" {
-    for_each = var.docker-instance-ports
+    for_each = var.instance-ports
     iterator = port
     content {
       from_port   = port.value
