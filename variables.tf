@@ -1,15 +1,14 @@
 variable "instance_type" {
-  type    = string
-  default = "t2.micro"
+  type = map(string)
+  default = {
+    dev  = "t3a.medium"
+    prod = "t3a.2xlarge"
+  }
+  description = "Adjust the instance type with workspace needs"
 }
 
 variable "key_name" {
   type = string
-}
-
-variable "num_of_instance" {
-  type    = number
-  default = 1
 }
 
 variable "tag" {

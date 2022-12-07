@@ -33,8 +33,8 @@ data "template_file" "userdata" {
 
 resource "aws_instance" "tfmyec2" {
   ami                    = data.aws_ami.ubuntu.id
-  instance_type          = var.instance_type
-  count                  = var.num_of_instance
+  instance_type          = lookup(var.instance_type, terraform.workspace)
+  count                  = terraform.workspace == "prod" ? 3 : 1
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.tf-sec-gr.id]
   user_data              = data.template_file.userdata.rendered
