@@ -9,3 +9,7 @@ output "sec_gr_id" {
 output "instance_id" {
   value = aws_instance.tfmyec2.*.id
 }
+
+output "instance_type" {
+  value = aws_instance.tfmyec2.*.instance_type
+}
