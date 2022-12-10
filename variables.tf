@@ -30,8 +30,6 @@ variable "instance-ports" {
   default     = [22, 80, 443]
 }
 
-variable "subnet_id" {
-  type        = string
-  description = "Subnet id of the instance"
-  default     = "subnet-3c9f471d" # default subnet
+variable "network_interface_id" {
+  type = string
 }
