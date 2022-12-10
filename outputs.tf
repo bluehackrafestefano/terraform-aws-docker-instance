@@ -13,3 +13,7 @@ output "instance_id" {
 output "instance_type" {
   value = aws_instance.tfmyec2.*.instance_type
 }
+
+output "subnet_id" {
+  value = aws_instance.tfmyec2.subnet_id
+}

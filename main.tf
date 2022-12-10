@@ -34,6 +34,7 @@ resource "aws_instance" "tfmyec2" {
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.tf-sec-gr.id]
   user_data              = data.template_file.userdata.rendered
+  subnet_id              = var.subnet_id
   tags = {
     Name = var.tag
   }
