@@ -13,7 +13,7 @@ variable "key_name" {
   description = "Write key name without .pem"
 }
 
-variable "tag" {
+variable "tags" {
   type        = string
   default     = "Ubuntu-Instance"
   description = "A tag to incicate instance os"
@@ -28,8 +28,4 @@ variable "instance-ports" {
   type        = list(number)
   description = "ubuntu-instance-sec-gr-inbound-rules"
   default     = [22, 80, 443]
-}
-
-variable "network_interface_id" {
-  type = string
 }

@@ -34,19 +34,15 @@ resource "aws_instance" "tfmyec2" {
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.tf-sec-gr.id]
   user_data              = data.template_file.userdata.rendered
-  network_interface {
-    network_interface_id = var.network_interface_id
-    device_index = 0
-  }
   tags = {
-    Name = var.tag
+    Name = var.tags
   }
 }
 
 resource "aws_security_group" "tf-sec-gr" {
-  name = "${var.tag}-terraform-sec-grp"
+  name = "terraform-sec-grp"
   tags = {
-    Name = var.tag
+    Name = var.tags
   }
   # A loop to iterate on port list
   dynamic "ingress" {
