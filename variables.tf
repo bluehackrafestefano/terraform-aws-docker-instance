@@ -27,5 +27,5 @@ variable "server-name" {
 variable "instance-ports" {
   type        = list(number)
   description = "ubuntu-instance-sec-gr-inbound-rules"
-  default     = [22, 80, 443]
+  default     = []
 }
