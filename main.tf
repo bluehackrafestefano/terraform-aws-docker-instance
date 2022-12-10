@@ -2,22 +2,18 @@
 data "aws_ami" "ubuntu" {
   owners      = ["099720109477"] # Canonical
   most_recent = true
-
   filter {
     name   = "root-device-type"
     values = ["ebs"]
   }
-
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
-
   filter {
     name   = "architecture"
     values = ["x86_64"]
   }
-
   filter {
     name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
@@ -48,7 +44,7 @@ resource "aws_security_group" "tf-sec-gr" {
   tags = {
     Name = var.tag
   }
-
+  # A loop to iterate on port list
   dynamic "ingress" {
     for_each = var.instance-ports
     iterator = port
@@ -59,7 +55,6 @@ resource "aws_security_group" "tf-sec-gr" {
       cidr_blocks = ["0.0.0.0/0"]
     }
   }
-
   egress {
     from_port   = 0
     protocol    = "-1"
