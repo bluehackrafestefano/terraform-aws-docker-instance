@@ -2,8 +2,8 @@ variable "instance_type" {
   type = map(string)
   default = {
     default = "t2.micro"
-    dev     = "t3a.medium"
-    prod    = "t3a.2xlarge"
+    dev     = "t2.small"
+    prod    = "t2.medium"
   }
   description = "Adjust the instance type with workspace needs"
 }
