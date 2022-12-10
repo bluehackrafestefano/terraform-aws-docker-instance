@@ -9,13 +9,13 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  type = string
+  type        = string
   description = "Write key name without .pem"
 }
 
 variable "tag" {
-  type    = string
-  default = "Ubuntu-Instance"
+  type        = string
+  default     = "Ubuntu-Instance"
   description = "A tag to incicate instance os"
 }
 
@@ -31,7 +31,7 @@ variable "instance-ports" {
 }
 
 variable "subnet_id" {
-  type = string
+  type        = string
   description = "Subnet id of the instance"
-  default = "subnet-3c9f471d"  # default subnet
+  default     = "subnet-3c9f471d" # default subnet
 }
