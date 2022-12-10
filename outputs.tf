@@ -1,5 +1,9 @@
-output "instance_public_ip" {
+output "instance_public_ips" {
   value = aws_instance.tfmyec2.*.public_ip
+}
+
+output "instance_public_ip" {
+  value = aws_instance.tfmyec2.0.public_ip
 }
 
 output "sec_gr_id" {
@@ -11,5 +15,5 @@ output "instance_id" {
 }
 
 output "instance_type" {
-  value = aws_instance.tfmyec2.*.instance_type
+  value = aws_instance.tfmyec2.0.instance_type
 }
